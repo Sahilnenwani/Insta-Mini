@@ -64,7 +64,7 @@ const Navbar = () => {
 </nav>      */}
   
 
-  <nav style={{backgroundColor:"white"}}> 
+  <nav className="bg-white" style={{backgroundColor:"white !important", marginLeft:"250px"}}> 
     <div>
       {/* <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -170,12 +170,12 @@ const Navbar = () => {
       )
     } else {
       return (
-       < div className="nav-wrapper bg-white" style={{backgroundColor:"white !important"}}>
-        <div className="brand-logo">
+       < div >
+        {/* <div className="brand-logo">
         <Link to={state ? "/" : "/signin"} className="brand-logo">
           Instamini
         </Link>
-        </div>
+        </div> */}
         <ul className="right">
         <li key="6">
           <Link to="/signin">Signin</Link>
@@ -204,12 +204,12 @@ const Navbar = () => {
 
   return (
     <nav style={{marginBottom:"60px"}}>
-      <div>
-        {/* <Link to={state ? "/" : "/signin"} className="brand-logo">
+     < div className="nav-wrapper bg-white" style={{backgroundColor:"white !important"}}>
+        <div className="brand-logo">
+        <Link to={state ? "/" : "/signin"} className="brand-logo">
           Instamini
-        </Link> */}
-       
-        
+        </Link>
+        </div>       
          {renderList()}
         
       </div>
