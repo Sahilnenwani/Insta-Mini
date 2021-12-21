@@ -16,7 +16,97 @@ const Navbar = () => {
     if (state) {
       return (
         <div>
-        <nav>
+
+{/* 
+
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+<Link to={state ? "/" : "/signin"} className="navbar-brand" style={{marginTop:"-10px", fontSize:"30px"}}>Instamini</Link>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+
+  <div className="navbar-collapse" id="navbarSupportedContent" >
+    <ul className="navbar-nav mr-auto">
+      <li className="nav-item">
+      <Link to="/profile" className="nav-link">Profile</Link>
+      </li>
+      <li className="nav-item">
+      <Link to="/createpost" className="nav-link">Create post</Link>
+      </li>
+      <li className="nav-item">
+      <Link to="/myfollowingpost" className="nav-link">My Following Posts</Link>
+      </li>  
+    </ul>
+    <form className="form-inline my-2 my-lg-0">
+    <li key="1">
+          <i
+            data-target="modal1"
+            className="material-icons modal-trigger my-2 my-sm-0"
+            style={{ color: "black", cursor: "pointer" }}
+          >
+            search
+          </i>
+        </li>
+    <button
+            className="btn #c62828 red darken-3 my-2 my-sm-0"
+            onClick={() => {
+              localStorage.clear();
+              dispatch({ type: "CLEAR" });
+              history.push("/signin");
+            }}
+          >
+            LOGOUT
+          </button>
+      {/* <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+    {/* </form>
+  </div>
+</nav>      */}
+  
+
+  <nav style={{backgroundColor:"white"}}> 
+    <div>
+      {/* <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul> */}
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><Link to="/profile">Profile</Link></li>
+        <li class="tab"><Link to="/createpost">Create post</Link></li>
+        <li class="tab"><Link to="/myfollowingpost">My Following Posts</Link></li>
+        <li class="tab">
+          <i
+            data-target="modal1"
+            className="material-icons modal-trigger my-2 my-sm-0"
+            style={{ color: "black", cursor: "pointer" }}
+          >
+            search
+          </i>
+        </li>
+        <li class="tab"><a href="#test4"><li key="5">
+          <button
+            className="btn #c62828 red darken-3"
+            onClick={() => {
+              localStorage.clear();
+              dispatch({ type: "CLEAR" });
+              history.push("/signin");
+            }}
+          >
+            LOGOUT
+          </button>
+        </li></a></li>
+      </ul>
+    </div>
+  </nav>
+
+ 
+
+{/* 
+      <nav>
         <div>
         <Link to={"/"} data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
         <ul className="right hide-on-med-and-down">
@@ -30,32 +120,21 @@ const Navbar = () => {
           </i>
         </li>
         <li key="2">
-          <Link to="/profile">Profile</Link>
+        
         </li>
         <li key="3">
-          <Link to="/createpost">Create post</Link>
+         
         </li>
         <li key="4">
-          <Link to="/myfollowingpost">My Following Posts</Link>
+          
         </li>
-        <li key="5">
-          <button
-            className="btn #c62828 red darken-3"
-            onClick={() => {
-              localStorage.clear();
-              dispatch({ type: "CLEAR" });
-              history.push("/signin");
-            }}
-          >
-            LOGOUT
-          </button>
-        </li>
+        
 
 
       </ul>
       </div>
-     </nav>
-        <ul className="sidenav" id="mobile-demo">
+     </nav> */}
+        {/* <ul className="sidenav" id="mobile-demo">
         <li key="1">
           <i
             data-target="modal1"
@@ -86,11 +165,17 @@ const Navbar = () => {
             LOGOUT
           </button>
         </li>
-        </ul>
+        </ul> */}
         </div>
       )
     } else {
       return (
+       < div className="nav-wrapper bg-white" style={{backgroundColor:"white !important"}}>
+        <div className="brand-logo">
+        <Link to={state ? "/" : "/signin"} className="brand-logo">
+          Instamini
+        </Link>
+        </div>
         <ul className="right">
         <li key="6">
           <Link to="/signin">Signin</Link>
@@ -99,6 +184,7 @@ const Navbar = () => {
           <Link to="/signup">Signup</Link>
         </li>
         </ul>
+        </div>
       )
     }
   };
@@ -117,15 +203,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <Link to={state ? "/" : "/signin"} className="brand-logo">
+    <nav style={{marginBottom:"60px"}}>
+      <div>
+        {/* <Link to={state ? "/" : "/signin"} className="brand-logo">
           Instamini
-        </Link>
+        </Link> */}
        
-        <ul id="mobile-demo" >
-          {renderList()}
-         </ul>
+        
+         {renderList()}
+        
       </div>
 
       <div
